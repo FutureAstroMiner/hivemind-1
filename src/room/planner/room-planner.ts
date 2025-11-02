@@ -287,4 +287,8 @@ export default class RoomPlanner {
 
 		return cache.inHeap('plannerCostMatrix:' + this.roomName, 500, () => this.activeRoomPlan.createNavigationMatrix());
 	}
+
+	public viewRoomPlan(ticks?: number) {
+		this.memory.drawDebug = ticks ? ticks : 20;
+	}
 }
