@@ -287,4 +287,13 @@ export default class RoomPlanner {
 
 		return cache.inHeap('plannerCostMatrix:' + this.roomName, 500, () => this.activeRoomPlan.createNavigationMatrix());
 	}
+
+	/**
+	 * Turns on the visuals for the room plan.
+	 *
+	 * @param ticks How many ticks to turn it on for. Default 20
+	 */
+	public viewRoomPlan(ticks?: number) {
+		this.memory.drawDebug = ticks ? ticks : 20;
+	}
 }
